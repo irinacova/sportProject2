@@ -1,26 +1,19 @@
-import Button from '../Button/Button';
-import Counter from '../Counter/Counter';
-import List from '../List/List';
-
+import React, { useState } from 'react';
 import Layout from './Layout';
+import Main from '../../pages/Main';
+import About from '../../pages/About';
+import Counters from '../../pages/Counters';
 
 function App() {
+    const [menu, setMenu] = useState('main');
+
     return (
         <>
-            <Layout>
-                <>
-                    <h1>Привет, Коваленко!</h1>
-                    <h2>Привет,React!</h2>
-                </>
+            <Layout setMenu={setMenu}>
+                {menu === 'main' && <Main />}
+                {menu === 'about' && <About />}
+                {menu === 'counters' && <Counters />}
             </Layout>
-            {/* 
-            <List />
-            <Button name={'Я кнопка 1'} color='red' />
-            <Button name={'Я кнопка 2'} color='blue' />
-            <Counter>Привет, я между Counter и Counter</Counter>
-            <p className='read-the-docs'>
-                Click on the Vite and React logos to learn more
-            </p> */}
         </>
     );
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import Menu from '../Menu/Menu';
 
-function Layout({ children }) {
+function Layout({ setMenu,children }) {
     return (
         <>
-            <Menu/>
+            <Menu setMenu={setMenu} />
             {children}
         </>
     );

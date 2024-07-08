@@ -1,5 +1,7 @@
 import React from 'react'
 
+
+
 function Button({name,color}) {
 console.log('Запустился компонент Button.js' + name);
 

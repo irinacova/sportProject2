@@ -1,12 +1,12 @@
 import React from 'react';
 
-function Menu() {
+function Menu({setMenu}) {
     return (
         <>
             <nav className='navbar navbar-expand-lg bg-secondary-subtle'>
                 <div className='container-fluid'>
                     <a className='navbar-brand' href='#'>
-                        Navbar
+                        Привет, Коваленко!
                     </a>
                     <button
                         className='navbar-toggler'
@@ -29,52 +29,27 @@ function Menu() {
                                     className='nav-link active'
                                     aria-current='page'
                                     href='#'
+                                    onClick={() => setMenu('main')}
                                 >
-                                    Home
+                                    Главная
                                 </a>
                             </li>
                             <li className='nav-item'>
-                                <a className='nav-link' href='#'>
-                                    Link
-                                </a>
-                            </li>
-                            <li className='nav-item dropdown'>
                                 <a
-                                    className='nav-link dropdown-toggle'
+                                    className='nav-link'
                                     href='#'
-                                    role='button'
-                                    data-bs-toggle='dropdown'
-                                    aria-expanded='false'
+                                    onClick={() => setMenu('about')}
                                 >
-                                    Dropdown
+                                    About
                                 </a>
-                                <ul className='dropdown-menu'>
-                                    <li>
-                                        <a className='dropdown-item' href='#'>
-                                            Action
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a className='dropdown-item' href='#'>
-                                            Another action
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <hr className='dropdown-divider' />
-                                    </li>
-                                    <li>
-                                        <a className='dropdown-item' href='#'>
-                                            Something else here
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
                             <li className='nav-item'>
                                 <a
-                                    className='nav-link disabled'
-                                    aria-disabled='true'
+                                    className='nav-link'
+                                    href='#'
+                                    onClick={() => setMenu('counters')}
                                 >
-                                    Disabled
+                                    Counter
                                 </a>
                             </li>
                         </ul>
